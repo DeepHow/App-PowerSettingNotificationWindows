@@ -1,6 +1,6 @@
 name: power_setting_windows
 description: A Flutter plugin for receiving Windows power setting notification.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/DeepHow/App-PowerSettingNotificationWindows
 
 environment:
