@@ -1,4 +1,4 @@
-#include "power_setting_windows_plugin.h"
+﻿#include "power_setting_windows_plugin.h"
 
 // This must be included before many other Windows headers.
 #include <windows.h>

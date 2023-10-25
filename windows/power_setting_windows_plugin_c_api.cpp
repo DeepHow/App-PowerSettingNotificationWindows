@@ -1,4 +1,4 @@
-#include "include/power_setting_windows/power_setting_windows_plugin_c_api.h"
+﻿#include "include/power_setting_windows/power_setting_windows_plugin_c_api.h"
 
 #include <flutter/plugin_registrar_windows.h>
 
