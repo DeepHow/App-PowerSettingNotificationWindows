@@ -20,17 +20,17 @@ class _MyAppState extends State<MyApp> with PowerSettingObserver {
   }
 
   @override
-  void didChangeConsoleDisplayState(ConsoleDisplayState state) {
+  void didChangeConsoleDisplayState(WinConsoleDisplayState state) {
     ...
   }
 
   @override
-  void didChangeSessionDisplayState(SessionDisplayState state) {
+  void didChangeSessionDisplayState(WinSessionDisplayState state) {
     ...
   }
 
   @override
-  void didChangeSessionUserState(SessionUserState state) {
+  void didChangeSessionUserState(WinSessionUserState state) {
     ...
   }
 }

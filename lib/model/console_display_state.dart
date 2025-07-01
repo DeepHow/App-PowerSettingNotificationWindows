@@ -1,5 +1,5 @@
 /// The current monitor's display state.
-enum ConsoleDisplayState {
+enum WinConsoleDisplayState {
   /// The display is off.
   off(0),
 
@@ -12,9 +12,10 @@ enum ConsoleDisplayState {
   /// Display status value
   final int status;
 
-  const ConsoleDisplayState(this.status);
+  const WinConsoleDisplayState(this.status);
 
-  /// Converts status value to a ConsoleDisplayState.
-  static fromStatus(int status) => ConsoleDisplayState.values
-      .firstWhere((element) => element.status == status);
+  /// Converts status value to a WinConsoleDisplayState.
+  static fromStatus(int status) => WinConsoleDisplayState.values.firstWhere(
+    (element) => element.status == status,
+  );
 }
