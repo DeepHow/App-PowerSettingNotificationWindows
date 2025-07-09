@@ -1,5 +1,5 @@
 /// The user status associated with the application's session.
-enum SessionUserState {
+enum WinSessionUserState {
   /// The user is providing input to the session.
   present(0),
 
@@ -9,9 +9,10 @@ enum SessionUserState {
   /// User status value
   final int status;
 
-  const SessionUserState(this.status);
+  const WinSessionUserState(this.status);
 
-  /// Converts status value to a SessionUserState.
-  static fromStatus(int status) =>
-      SessionUserState.values.firstWhere((element) => element.status == status);
+  /// Converts status value to a WinSessionUserState.
+  static fromStatus(int status) => WinSessionUserState.values.firstWhere(
+    (element) => element.status == status,
+  );
 }

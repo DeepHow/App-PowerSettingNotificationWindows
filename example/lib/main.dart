@@ -46,17 +46,17 @@ class _MyAppState extends State<MyApp> with PowerSettingObserver {
   }
 
   @override
-  void didChangeConsoleDisplayState(ConsoleDisplayState state) {
+  void didChangeConsoleDisplayState(WinConsoleDisplayState state) {
     logToScreen('[didChangeConsoleDisplayState] state: $state');
   }
 
   @override
-  void didChangeSessionDisplayState(SessionDisplayState state) {
+  void didChangeSessionDisplayState(WinSessionDisplayState state) {
     logToScreen('[didChangeSessionDisplayState] state: $state');
   }
 
   @override
-  void didChangeSessionUserState(SessionUserState state) {
+  void didChangeSessionUserState(WinSessionUserState state) {
     logToScreen('[didChangeSessionUserState] state: $state');
   }
 
@@ -64,9 +64,7 @@ class _MyAppState extends State<MyApp> with PowerSettingObserver {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Windows Power Setting Notification'),
-        ),
+        appBar: AppBar(title: const Text('Windows Power Setting Notification')),
         body: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
           child: Column(

@@ -19,8 +19,9 @@ class MethodChannelPowerSettingWindows extends PowerSettingWindowsPlatform {
 
   /// The event channel used to interact with the native platform.
   @visibleForTesting
-  final eventChannel =
-      const EventChannel('power_setting_windows/power_setting_event');
+  final eventChannel = const EventChannel(
+    'power_setting_windows/power_setting_event',
+  );
 
   /// Rregistered events.
   final Map<PowerSetting, int> _registeredEvents = {};
@@ -44,15 +45,18 @@ class MethodChannelPowerSettingWindows extends PowerSettingWindowsPlatform {
             switch (powerSetting) {
               case PowerSetting.GUID_CONSOLE_DISPLAY_STATE:
                 observer.didChangeConsoleDisplayState(
-                    ConsoleDisplayState.fromStatus(status));
+                  WinConsoleDisplayState.fromStatus(status),
+                );
                 break;
               case PowerSetting.GUID_SESSION_DISPLAY_STATUS:
                 observer.didChangeSessionDisplayState(
-                    SessionDisplayState.fromStatus(status));
+                  WinSessionDisplayState.fromStatus(status),
+                );
                 break;
               case PowerSetting.GUID_SESSION_USER_PRESENCE:
                 observer.didChangeSessionUserState(
-                    SessionUserState.fromStatus(status));
+                  WinSessionUserState.fromStatus(status),
+                );
                 break;
             }
           }
@@ -78,9 +82,13 @@ class MethodChannelPowerSettingWindows extends PowerSettingWindowsPlatform {
     final hwnd = GetForegroundWindow();
     for (var setting in PowerSetting.values) {
       _registeredEvents.putIfAbsent(
-          setting,
-          () => RegisterPowerSettingNotification(
-              hwnd, GUIDFromString(setting.guid), DEVICE_NOTIFY_WINDOW_HANDLE));
+        setting,
+        () => RegisterPowerSettingNotification(
+          hwnd,
+          GUIDFromString(setting.guid),
+          DEVICE_NOTIFY_WINDOW_HANDLE,
+        ),
+      );
     }
   }
 

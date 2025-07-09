@@ -1,5 +1,5 @@
 /// The display status associated with the application's session.
-enum SessionDisplayState {
+enum WinSessionDisplayState {
   /// The display is off.
   off(0),
 
@@ -12,9 +12,10 @@ enum SessionDisplayState {
   /// Display status value
   final int status;
 
-  const SessionDisplayState(this.status);
+  const WinSessionDisplayState(this.status);
 
-  /// Converts status value to a SessionDisplayState.
-  static fromStatus(int status) => SessionDisplayState.values
-      .firstWhere((element) => element.status == status);
+  /// Converts status value to a WinSessionDisplayState.
+  static fromStatus(int status) => WinSessionDisplayState.values.firstWhere(
+    (element) => element.status == status,
+  );
 }
