@@ -1,3 +1,7 @@
+## 1.0.0
+
+- **FIX**: Support Flutter 3.32
+
 ## 0.0.3
 
 - **FIX**: Fix source encoding issue.
